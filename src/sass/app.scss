@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$color-border-input: #DCDEE0;
+$color-border-stats: #DBDBDB;
+$color-background-main: #F2F2F2;
+$color-background-footer: #F4F4F4;
+$color-font: #384045;
+$color-required: #FF4141;
+$color-mapon-green: #98CA02;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-font;
+}
+
+body {
+    background-color: $color-background-main;
+    padding: 0 24px;
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: normal;
+}
+
+select, input {
+    border: 1px solid $color-border-input;
+    border-radius: 3px;
+    height: 32px;
+    padding: 0 10px;
+    outline: none;
+}
+
+.mapon-logo {
+    width: 156px;
+    padding: 26px 0;
+    margin: 0 auto;
+}
+
+.report-container {
+    background-color: #FFF;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 2px 14px rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+
+    .report-form {
+        padding: 40px 24px;
+
+        h1 {
+            padding-bottom: 31px;
+        }
+
+        .vehicle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+    
+            label {
+                width: 156px;
+            }
+            
+            .required:after {
+                content: "*";
+                color: $color-required;
+            }
+
+            select {
+                width: 380px;
+                cursor: pointer;
+            }
+        }
+
+        .period {
+            display: flex;
+            justify-content: space-between;
+    
+            p {
+                width: 156px;
+            }
+    
+            .dates {
+                display: flex;
+                justify-content: space-between;
+                width: 380px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    &:first-of-type {
+                        padding-right: 8px;
+                    }
+
+                    label {
+                        padding-bottom: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .report {
+        width: 100%;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        .report-map {
+            width: 100%;
+            height: 200px;
+            background-color: $color-mapon-green;
+        }
+
+        .stats-buffer {
+            width: 100%;
+            height: 24px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+
+            .stat {
+                width: 180px;
+                text-align: center;
+                border-right: 1px solid $color-border-stats;
+
+                &:last-of-type {
+                    border-right: none;
+                }
+
+                h1 {
+                    font-size: 30px;
+                    line-height: 35px;
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+
+    .report-footer {
+        width: 100%;
+        background-color: $color-background-footer;
+        padding: 16px 24px;
+        text-align: right;
+
+        button {
+            background-color: $color-mapon-green;
+            line-height: 16px;
+            color: #FFF;
+            text-transform: uppercase;
+            padding: 8px 15px;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
