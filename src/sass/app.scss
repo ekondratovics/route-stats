@@ -37,10 +37,14 @@ select, input {
     outline: none;
 }
 
-.mapon-logo {
-    width: 156px;
+.title {
     padding: 26px 0;
-    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+        font-size: 48px;
+        line-height: 72px;
+    }
 }
 
 .report-container {
